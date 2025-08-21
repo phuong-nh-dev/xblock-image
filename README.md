@@ -75,7 +75,7 @@ Go to `Settings -> Advanced Settings` and set `advanced_modules` to `["custom_im
 
 ### Use the XBlock in a unit
 
-Select `Advanced -> Custom Image Display` in your unit.
+Select `Advanced -> Image Display` in your unit.
 
 ## Configuration Options
 

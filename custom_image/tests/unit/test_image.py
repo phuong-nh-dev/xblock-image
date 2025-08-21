@@ -28,7 +28,7 @@ class TestCustomImageBlock(unittest.TestCase):
     def test_init(self):
         """Test XBlock initialization"""
         block = self.make_one()
-        self.assertEqual(block.display_name, "Custom Image Display")
+        self.assertEqual(block.display_name, "Image Display")
         self.assertEqual(block.image_url, "https://via.placeholder.com/800x400/0066cc/ffffff?text=Sample+Image")
         self.assertEqual(block.image_alt, "")
 
