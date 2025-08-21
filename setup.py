@@ -96,7 +96,7 @@ def package_data(pkg, root_list):
     return {pkg: data}
 
 
-VERSION = get_version('image', '__init__.py')
+VERSION = get_version('custom_image', '__init__.py')
 
 if sys.argv[-1] == 'tag':
     print("Tagging the version on GitHub:")
@@ -107,9 +107,9 @@ if sys.argv[-1] == 'tag':
 README = open(os.path.join(os.path.dirname(__file__), 'README.md'), encoding="utf8").read()
 
 setup(
-    name='xblock-image',
+    name='xblock-custom-image',
     version=VERSION,
-    description='An XBlock which allows embedding of full-width images within an edX course',
+    description='A custom XBlock which allows embedding of full-width images within an edX course',
     long_description=README,
     long_description_content_type='text/markdown',
     classifiers=[
@@ -120,14 +120,14 @@ setup(
         'Framework :: Django :: 4.2',
         'Framework :: Django :: 5.2',
     ],
-    url='https://github.com/openedx/xblock-image',
+    url='https://github.com/openedx/xblock-custom-image',
     install_requires=load_requirements('requirements/base.in'),
     entry_points={
         'xblock.v1': [
-            'custom_image = image:ImageBlock'
+            'custom_image = custom_image:CustomImageBlock'
         ]
     },
-    packages=['image'],
-    package_data=package_data("image", ["static", "templates", "public", "translations", "conf"]),
+    packages=['custom_image'],
+    package_data=package_data("custom_image", ["static", "templates", "public", "translations", "conf"]),
     python_requires=">=3.11",
 )

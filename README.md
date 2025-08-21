@@ -1,8 +1,8 @@
-# xblock-image v1.0.0 - OpenEDX Compatible
+# xblock-custom-image v1.0.0 - OpenEDX Compatible
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/openedx/xblock-image)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/openedx/xblock-custom-image)
 
-> Course component (Open edX XBlock) that provides an easy way to embed full-width images - **Compatible with modern OpenEDX releases**
+> Course component (Open edX XBlock) that provides an easy way to embed full-width custom images - **Compatible with modern OpenEDX releases**
 
 ## Features
 
@@ -37,7 +37,7 @@ nano "$(tutor config printroot)/config.yml"
 
 ```yml
 OPENEDX_EXTRA_PIP_REQUIREMENTS:
-  - "git+https://github.com/your-repo/xblock-image.git@v1.0.0#egg=xblock-image"
+  - "git+https://github.com/your-repo/xblock-custom-image.git@v1.0.0#egg=xblock-custom-image"
 ```
 
 Save your config file and rebuild:
@@ -54,7 +54,7 @@ Add it to the `EDXAPP_EXTRA_REQUIREMENTS` variable:
 
 ```yml
 EDXAPP_EXTRA_REQUIREMENTS:
-  - name: "git+https://github.com/your-repo/xblock-image.git@v1.0.0#egg=xblock-image"
+  - name: "git+https://github.com/your-repo/xblock-custom-image.git@v1.0.0#egg=xblock-custom-image"
 ```
 
 Then run your deployment playbooks.
@@ -75,7 +75,7 @@ Go to `Settings -> Advanced Settings` and set `advanced_modules` to `["custom_im
 
 ### Use the XBlock in a unit
 
-Select `Advanced -> Image Display` in your unit.
+Select `Advanced -> Custom Image Display` in your unit.
 
 ## Configuration Options
 
@@ -109,8 +109,8 @@ Descriptive text for screen readers and when images fail to load. Important for 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-repo/xblock-image.git
-   cd xblock-image
+   git clone https://github.com/your-repo/xblock-custom-image.git
+   cd xblock-custom-image
    ```
 
 2. **Create and activate virtual environment:**
@@ -138,8 +138,8 @@ Descriptive text for screen readers and when images fail to load. Important for 
 
 The XBlock publishes the following events for analytics:
 
-- `edx.image.displayed` - When an image loads successfully
-- `edx.image.load_error` - When an image fails to load
+- `edx.custom_image.displayed` - When a custom image loads successfully
+- `edx.custom_image.load_error` - When a custom image fails to load
 
 ## Accessibility Features
 

@@ -1,5 +1,5 @@
 """
-Unit tests for ImageBlock
+Unit tests for CustomImageBlock
 """
 import unittest
 from unittest.mock import Mock, patch
@@ -7,11 +7,11 @@ from unittest.mock import Mock, patch
 from xblock.field_data import DictFieldData
 from xblock.fields import ScopeIds
 
-from image.image import ImageBlock
+from custom_image.image import CustomImageBlock
 
 
-class TestImageBlock(unittest.TestCase):
-    """Test ImageBlock functionality"""
+class TestCustomImageBlock(unittest.TestCase):
+    """Test CustomImageBlock functionality"""
 
     def setUp(self):
         """Set up test fixtures"""
@@ -20,15 +20,15 @@ class TestImageBlock(unittest.TestCase):
         self.scope_ids = ScopeIds('user_id', 'block_type', 'def_id', 'usage_id')
         
     def make_one(self, **field_data):
-        """Create an ImageBlock for testing"""
+        """Create a CustomImageBlock for testing"""
         field_data_dict = DictFieldData(field_data)
-        block = ImageBlock(self.runtime, field_data_dict, self.scope_ids)
+        block = CustomImageBlock(self.runtime, field_data_dict, self.scope_ids)
         return block
         
     def test_init(self):
         """Test XBlock initialization"""
         block = self.make_one()
-        self.assertEqual(block.display_name, "Image Display")
+        self.assertEqual(block.display_name, "Custom Image Display")
         self.assertEqual(block.image_url, "https://via.placeholder.com/800x400/0066cc/ffffff?text=Sample+Image")
         self.assertEqual(block.image_alt, "")
 
@@ -56,14 +56,14 @@ class TestImageBlock(unittest.TestCase):
         self.assertEqual(block.image_url, "https://example.com/updated.jpg")
         self.assertEqual(block.image_alt, "Updated alt text")
 
-    @patch('image.image.RESOURCE_LOADER')
+    @patch('custom_image.image.RESOURCE_LOADER')
     def test_student_view(self, mock_loader):
         """Test student view rendering"""
         block = self.make_one()
         mock_loader.render_django_template.return_value = '<div>Test HTML</div>'
         mock_loader.load_unicode.return_value = 'test-content'
         
-        with patch('image.image.Fragment') as mock_fragment_class:
+        with patch('custom_image.image.Fragment') as mock_fragment_class:
             mock_fragment = Mock()
             mock_fragment_class.return_value = mock_fragment
             
@@ -73,16 +73,16 @@ class TestImageBlock(unittest.TestCase):
             mock_fragment.add_content.assert_called_once()
             mock_fragment.add_css.assert_called_once()
             mock_fragment.add_javascript.assert_called_once()
-            mock_fragment.initialize_js.assert_called_with('ImageBlock')
+            mock_fragment.initialize_js.assert_called_with('CustomImageBlock')
 
-    @patch('image.image.RESOURCE_LOADER')
+    @patch('custom_image.image.RESOURCE_LOADER')
     def test_studio_view(self, mock_loader):
         """Test studio view rendering"""
         block = self.make_one()
         mock_loader.render_django_template.return_value = '<div>Edit HTML</div>'
         mock_loader.load_unicode.return_value = 'test-content'
         
-        with patch('image.image.Fragment') as mock_fragment_class:
+        with patch('custom_image.image.Fragment') as mock_fragment_class:
             mock_fragment = Mock()
             mock_fragment_class.return_value = mock_fragment
             
@@ -92,13 +92,13 @@ class TestImageBlock(unittest.TestCase):
             mock_fragment.add_content.assert_called_once()
             mock_fragment.add_css.assert_called_once()
             mock_fragment.add_javascript.assert_called_once()
-            mock_fragment.initialize_js.assert_called_with('ImageEditBlock')
+            mock_fragment.initialize_js.assert_called_with('CustomImageEditBlock')
 
     def test_workbench_scenarios(self):
         """Test workbench scenarios"""
-        scenarios = ImageBlock.workbench_scenarios()
+        scenarios = CustomImageBlock.workbench_scenarios()
         self.assertEqual(len(scenarios), 1)
-        self.assertEqual(scenarios[0][0], "Image scenario")
+        self.assertEqual(scenarios[0][0], "Custom Image scenario")
         self.assertIn("custom_image", scenarios[0][1])
 
     def test_template_context(self):
@@ -110,11 +110,11 @@ class TestImageBlock(unittest.TestCase):
         )
         
         # The context should include the block itself
-        with patch('image.image.RESOURCE_LOADER') as mock_loader:
+        with patch('custom_image.image.RESOURCE_LOADER') as mock_loader:
             mock_loader.render_django_template.return_value = '<div>Test</div>'
             mock_loader.load_unicode.return_value = 'test-content'
             
-            with patch('image.image.Fragment'):
+            with patch('custom_image.image.Fragment'):
                 block.student_view({})
                 
                 # Check that render_django_template was called with the right context

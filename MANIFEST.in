@@ -1,6 +1,6 @@
 include README.md
 include requirements.txt
-recursive-include image/templates *
-recursive-include image/public *
-recursive-include image/translations *
-recursive-include image/conf *
+recursive-include custom_image/templates *
+recursive-include custom_image/public *
+recursive-include custom_image/translations *
+recursive-include custom_image/conf *

@@ -1,5 +1,5 @@
-/* Javascript for ImageEditBlock. */
-function ImageEditBlock(runtime, element) {
+/* Javascript for CustomImageEditBlock. */
+function CustomImageEditBlock(runtime, element) {
   var submitButton = $("#image-submit-options", element);
   var cancelButton = $("#cancel_button", element);
   var errorMessage = $(".xblock-editor-error-message", element);

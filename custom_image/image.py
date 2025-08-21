@@ -1,4 +1,4 @@
-"""Image XBlock implementation"""
+"""Custom Image XBlock implementation"""
 # -*- coding: utf-8 -*-
 
 # Imports ###########################################################
@@ -28,16 +28,16 @@ def _(text):
 
 # Classes ###########################################################
 @XBlock.needs("i18n")
-class ImageBlock(XBlock, PublishEventMixin):
+class CustomImageBlock(XBlock, PublishEventMixin):
     """
-    XBlock providing a full-width image display
+    Custom XBlock providing a full-width image display
     """
 
     display_name = String(
         display_name=_("Display Name"),
         help=_("This name appears in the horizontal navigation at the top of the page."),
         scope=Scope.settings,
-        default="Image Display"
+        default="Custom Image Display"
     )
     
     image_url = String(
@@ -69,7 +69,7 @@ class ImageBlock(XBlock, PublishEventMixin):
         fragment.add_css(RESOURCE_LOADER.load_unicode('public/css/image.css'))
         fragment.add_javascript(RESOURCE_LOADER.load_unicode('public/js/image_view.js'))
 
-        fragment.initialize_js('ImageBlock')
+        fragment.initialize_js('CustomImageBlock')
 
         return fragment
 
@@ -89,7 +89,7 @@ class ImageBlock(XBlock, PublishEventMixin):
         fragment.add_javascript(RESOURCE_LOADER.load_unicode('public/js/image_edit.js'))
         fragment.add_css(RESOURCE_LOADER.load_unicode('public/css/image_edit.css'))
 
-        fragment.initialize_js('ImageEditBlock')
+        fragment.initialize_js('CustomImageEditBlock')
 
         return fragment
 
@@ -121,4 +121,4 @@ class ImageBlock(XBlock, PublishEventMixin):
         """
         A canned scenario for display in the workbench.
         """
-        return [("Image scenario", "<vertical_demo><custom_image/></vertical_demo>")]
+        return [("Custom Image scenario", "<vertical_demo><custom_image/></vertical_demo>")]

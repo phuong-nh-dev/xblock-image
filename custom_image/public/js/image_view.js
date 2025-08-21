@@ -1,5 +1,5 @@
-/* Javascript for ImageBlock. */
-function ImageBlock(runtime, element) {
+/* Javascript for CustomImageBlock. */
+function CustomImageBlock(runtime, element) {
   var image = $("img.image-display", element);
   var xblock_wrapper = $(".image-xblock-wrapper", element);
   var display_name = xblock_wrapper.attr("data-display-name");
@@ -20,7 +20,7 @@ function ImageBlock(runtime, element) {
       url: runtime.handlerUrl(element, "publish_event"),
       data: JSON.stringify({
         url: image_src,
-        event_type: "edx.image.displayed",
+        event_type: "edx.custom_image.displayed",
         display_name: display_name,
       }),
       success: function () {
@@ -38,7 +38,7 @@ function ImageBlock(runtime, element) {
       url: runtime.handlerUrl(element, "publish_event"),
       data: JSON.stringify({
         url: $(ev.target).attr("src"),
-        event_type: "edx.image.load_error",
+        event_type: "edx.custom_image.load_error",
         display_name: display_name,
       }),
     });
