@@ -1,0 +1,105 @@
+{% load i18n %}
+
+<!-- TODO: Replace by default edit view once available in Studio -->
+<div
+  class="wrapper-comp-settings is-active editor-with-buttons image-edit-wrapper"
+  id="image-settings-tab"
+>
+  <div class="user-inputs-and-validation">
+    <div class="validation_alert covered">
+      <i class="alert_icon"></i>
+      <div class="alert_header">
+        <h2 class="alert_title">{% trans "Invalid Image Configuration" %}</h2>
+        <p class="alert_message">
+          {% trans "Please correct the outlined fields." %}
+        </p>
+      </div>
+    </div>
+    <div class="xblock-inputs editor_content_wrapper">
+      <ul class="list-input settings-list">
+        <li class="field comp-setting-entry is-set">
+          <div class="wrapper-comp-setting">
+            <label class="label setting-label" for="edit_display_name"
+              >{% trans "Display Name" %}</label
+            >
+            <input
+              class="input setting-input edit-display-name"
+              id="edit_display_name"
+              value="{{ self.display_name }}"
+              type="text"
+              data-default-value="{{defaultName}}"
+            />
+            <button
+              class="action setting-clear clear-display-name"
+              type="button"
+              name="setting-clear"
+            >
+              <i class="icon fa fa-undo"></i>
+              <span class="sr">{% trans "Clear Value" %}</span>
+            </button>
+          </div>
+          <span class="tip setting-help"
+            >{% trans "This name appears in the horizontal navigation at the top
+            of the page." %}</span
+          >
+        </li>
+        <li class="field comp-setting-entry is-set">
+          <div class="wrapper-comp-setting">
+            <label class="label setting-label" for="edit_image_url"
+              >{% trans "Image URL" %}</label
+            >
+            <input
+              class="input setting-input edit-image-url"
+              id="edit_image_url"
+              value="{{ self.image_url }}"
+              type="url"
+              placeholder="https://example.com/image.jpg"
+            />
+          </div>
+          <span class="tip setting-help"
+            >{% trans "The URL for your image. Supports JPG, PNG, GIF, SVG, and
+            WebP formats." %}</span
+          >
+        </li>
+        <li class="field comp-setting-entry is-set">
+          <div class="wrapper-comp-setting">
+            <label class="label setting-label" for="edit_image_alt"
+              >{% trans "Alternative Text" %}</label
+            >
+            <input
+              class="input setting-input edit-image-alt"
+              id="edit_image_alt"
+              value="{{ self.image_alt }}"
+              type="text"
+              placeholder="{% trans 'Describe the image content' %}"
+            />
+          </div>
+          <span class="tip setting-help"
+            >{% trans "Alternative text describes the image and appears if the
+            image is unavailable. This is important for accessibility and screen
+            readers." %}</span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="xblock-actions">
+    <span class="xblock-editor-error-message"></span>
+    <ul>
+      <li class="action-item">
+        <a
+          href="#"
+          id="image-submit-options"
+          class="button action-primary save-button"
+          >{% trans "Save" %}</a
+        >
+      </li>
+
+      <li class="action-item">
+        <a href="#" class="button cancel-button" id="cancel_button"
+          >{% trans "Cancel" %}</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

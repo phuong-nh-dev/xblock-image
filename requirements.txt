@@ -1,0 +1,5 @@
+# Production requirements for quick installation
+# For development, use: pip install -r requirements/dev.in
+
+Django>=4.2,<5.3
+XBlock[django]>=1.6.0

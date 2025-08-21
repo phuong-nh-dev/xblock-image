@@ -1,0 +1,21 @@
+<div
+  class="image-xblock-wrapper"
+  data-display-name="{{self.display_name}}"
+  data-image-url="{{self.image_url}}"
+  data-image-alt="{{self.image_alt}}"
+>
+  <input type="hidden" class="load_event_complete" />
+
+  {% if self.display_name %}
+  <div class="image-title">{{ self.display_name }}</div>
+  {% endif %}
+
+  <div class="image-container">
+    <img
+      src="{{ self.image_url }}"
+      alt="{{ self.image_alt|default:self.display_name }}"
+      class="image-display"
+      title="{{ self.display_name }}"
+    />
+  </div>
+</div>

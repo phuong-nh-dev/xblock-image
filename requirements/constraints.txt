@@ -1,0 +1,18 @@
+# Constraints for reproducible builds
+# This file constrains the versions of dependencies to ensure reproducible builds.
+# It should be updated regularly to match the latest stable versions.
+
+# Core constraints
+Django>=4.2,<5.3
+XBlock>=1.6.0
+
+# Development constraints
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-django>=4.5.0
+
+# Quality constraints
+pylint>=2.15.0
+pycodestyle>=2.9.0
+pydocstyle>=6.1.0
+bandit>=1.7.0

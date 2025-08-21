@@ -1,0 +1,148 @@
+/* CSS for Image XBlock Studio Edit Interface */
+.image-edit-wrapper {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.image-edit-wrapper .validation_alert {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  color: #721c24;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.image-edit-wrapper .validation_alert.covered {
+  display: none;
+}
+
+.image-edit-wrapper .alert_icon {
+  color: #dc3545;
+  margin-right: 10px;
+}
+
+.image-edit-wrapper .settings-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.image-edit-wrapper .comp-setting-entry {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.image-edit-wrapper .comp-setting-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.image-edit-wrapper .wrapper-comp-setting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.image-edit-wrapper .setting-label {
+  min-width: 120px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.image-edit-wrapper .setting-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.image-edit-wrapper .setting-input:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.image-edit-wrapper .setting-clear {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.image-edit-wrapper .setting-clear:hover {
+  background: #e9ecef;
+  color: #333;
+}
+
+.image-edit-wrapper .setting-help {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.image-edit-wrapper .xblock-actions {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.image-edit-wrapper .xblock-actions ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.image-edit-wrapper .button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid;
+}
+
+.image-edit-wrapper .action-primary {
+  background: #0066cc;
+  color: white;
+  border-color: #0066cc;
+}
+
+.image-edit-wrapper .action-primary:hover {
+  background: #0052a3;
+  border-color: #0052a3;
+}
+
+.image-edit-wrapper .cancel-button {
+  background: #6c757d;
+  color: white;
+  border-color: #6c757d;
+}
+
+.image-edit-wrapper .cancel-button:hover {
+  background: #5a6268;
+  border-color: #5a6268;
+}
+
+.image-edit-wrapper .xblock-editor-error-message {
+  color: #dc3545;
+  font-weight: 600;
+  margin-right: 15px;
+}

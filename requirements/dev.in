@@ -1,0 +1,11 @@
+# Development requirements
+-r base.in
+
+# Testing
+pytest
+pytest-cov
+pytest-django
+
+# Development tools
+ipython
+ipdb

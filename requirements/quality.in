@@ -1,0 +1,10 @@
+# Quality assurance requirements
+-r base.in
+
+# Linting
+pylint
+pycodestyle
+pydocstyle
+
+# Security
+bandit
