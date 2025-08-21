@@ -124,7 +124,7 @@ setup(
     install_requires=load_requirements('requirements/base.in'),
     entry_points={
         'xblock.v1': [
-            'image = image:ImageBlock'
+            'custom_image = image:ImageBlock'
         ]
     },
     packages=['image'],

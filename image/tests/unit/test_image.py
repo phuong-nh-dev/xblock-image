@@ -99,7 +99,7 @@ class TestImageBlock(unittest.TestCase):
         scenarios = ImageBlock.workbench_scenarios()
         self.assertEqual(len(scenarios), 1)
         self.assertEqual(scenarios[0][0], "Image scenario")
-        self.assertIn("image", scenarios[0][1])
+        self.assertIn("custom_image", scenarios[0][1])
 
     def test_template_context(self):
         """Test that the block provides the right context to templates"""

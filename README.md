@@ -71,7 +71,7 @@ Not needed in tutor EDX
 
 ### Activate the XBlock in your course
 
-Go to `Settings -> Advanced Settings` and set `advanced_modules` to `["image"]`.
+Go to `Settings -> Advanced Settings` and set `advanced_modules` to `["custom_image"]`.
 
 ### Use the XBlock in a unit
 

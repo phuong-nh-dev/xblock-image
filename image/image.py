@@ -121,4 +121,4 @@ class ImageBlock(XBlock, PublishEventMixin):
         """
         A canned scenario for display in the workbench.
         """
-        return [("Image scenario", "<vertical_demo><image/></vertical_demo>")]
+        return [("Image scenario", "<vertical_demo><custom_image/></vertical_demo>")]
